@@ -165,7 +165,7 @@
 				<div class="col-md-3 logo_agile">
 					<h1 class="text-center">
 						<a href="index.html.twig" class="font-weight-bold font-italic">
-							<img src="assets/images/logo2.png" alt=" " class="img-fluid">Oussema Store
+							<img src="assets/images/logo2.png" alt=" " class="img-fluid">Sfèri Store
 						</a>
 					</h1>
 				</div>
@@ -210,14 +210,9 @@
 						<select id="agileinfo-nav_search" name="agileinfo_search" class="border" required="">
 							<option value="">All Categories</option>
 							<option value="Televisions">Televisions</option>
-							<option value="Headphones">Headphones</option>
-							<option value="Computers">Computers</option>
-							<option value="Appliances">Appliances</option>
-							<option value="Mobiles">Mobiles</option>
-							<option value="Fruits &amp; Vegetables">Tv &amp; Video</option>
-							<option value="iPad & Tablets">iPad & Tablets</option>
-							<option value="Cameras & Camcorders">Cameras & Camcorders</option>
-							<option value="Home Audio & Theater">Home Audio & Theater</option>
+							 {% for category in categories %}
+								 <option value="{{ category.name }}">{{ category.name }}</option>
+							 {% endfor %}
 						</select>
 					</form>
 				</div>
@@ -228,72 +223,31 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto text-center mr-xl-5">
 						<li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
-							<a class="nav-link" href="index.html.twig">Home
+							<a class="nav-link" href="#">Home
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Electronics
+								All Categories
 							</a>
 							<div class="dropdown-menu">
-								<div class="agile_inner_drop_nav_info p-4">
-									<h5 class="mb-3">Mobiles, Computers</h5>
+								<div class="agile_inner_drop_nav_info p-2">
+
 									<div class="row">
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li>
-													<a href="product.html">All Mobile Phones</a>
-												</li>
-												<li>
-													<a href="product.html">All Mobile Accessories</a>
-												</li>
-												<li>
-													<a href="product.html">Cases & Covers</a>
-												</li>
-												<li>
-													<a href="product.html">Screen Protectors</a>
-												</li>
-												<li>
-													<a href="product.html">Power Banks</a>
-												</li>
-												<li>
-													<a href="product.html">All Certified Refurbished</a>
-												</li>
-												<li>
-													<a href="product.html">Tablets</a>
-												</li>
-												<li>
-													<a href="product.html">Wearable Devices</a>
-												</li>
-												<li>
-													<a href="product.html">Smart Home</a>
-												</li>
+												{% for category in categories %}
+													<li>
+														<a href="{{ path('productsbycategory', {'id': category.id}) }}">{{ category.name }}</a>
+													</li>
+												{% endfor %}
+
 											</ul>
 										</div>
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li>
-													<a href="product.html">Laptops</a>
-												</li>
-												<li>
-													<a href="product.html">Drives & Storage</a>
-												</li>
-												<li>
-													<a href="product.html">Printers & Ink</a>
-												</li>
-												<li>
-													<a href="product.html">Networking Devices</a>
-												</li>
-												<li>
-													<a href="product.html">Computer Accessories</a>
-												</li>
-												<li>
-													<a href="product.html">Game Zone</a>
-												</li>
-												<li>
-													<a href="product.html">Software</a>
-												</li>
+
 											</ul>
 										</div>
 									</div>
@@ -302,72 +256,23 @@
 						</li>
 						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Appliances
+								All Brands
 							</a>
 							<div class="dropdown-menu">
 								<div class="agile_inner_drop_nav_info p-4">
-									<h5 class="mb-3">TV, Appliances, Electronics</h5>
 									<div class="row">
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li>
-													<a href="product2.html">Televisions</a>
-												</li>
-												<li>
-													<a href="product2.html">Home Entertainment Systems</a>
-												</li>
-												<li>
-													<a href="product2.html">Headphones</a>
-												</li>
-												<li>
-													<a href="product2.html">Speakers</a>
-												</li>
-												<li>
-													<a href="product2.html">MP3, Media Players & Accessories</a>
-												</li>
-												<li>
-													<a href="product2.html">Audio & Video Accessories</a>
-												</li>
-												<li>
-													<a href="product2.html">Cameras</a>
-												</li>
-												<li>
-													<a href="product2.html">DSLR Cameras</a>
-												</li>
-												<li>
-													<a href="product2.html">Camera Accessories</a>
-												</li>
+												{% for product in products %}
+													<li>
+														<a href="{{ path('product') }}">{{ product.brand }}</a>
+													</li>
+												{% endfor %}
 											</ul>
 										</div>
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
-												<li>
-													<a href="product2.html">Musical Instruments</a>
-												</li>
-												<li>
-													<a href="product2.html">Gaming Consoles</a>
-												</li>
-												<li>
-													<a href="product2.html">All Electronics</a>
-												</li>
-												<li>
-													<a href="product2.html">Air Conditioners</a>
-												</li>
-												<li>
-													<a href="product2.html">Refrigerators</a>
-												</li>
-												<li>
-													<a href="product2.html">Washing Machines</a>
-												</li>
-												<li>
-													<a href="product2.html">Kitchen & Home Appliances</a>
-												</li>
-												<li>
-													<a href="product2.html">Heating & Cooling Appliances</a>
-												</li>
-												<li>
-													<a href="product2.html">All Appliances</a>
-												</li>
+
 											</ul>
 										</div>
 									</div>
@@ -378,14 +283,14 @@
 							<a class="nav-link" href="about.html">About Us</a>
 						</li>
 						<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-							<a class="nav-link" href="product.html">New Arrivals</a>
+							<a class="nav-link" href="product.html.twig">New Arrivals</a>
 						</li>
 						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Pages
 							</a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="product.html">Product 1</a>
+								<a class="dropdown-item" href="product.html.twig">Product 1</a>
 								<a class="dropdown-item" href="product2.html">Product 2</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="single.html">Single Product 1</a>
@@ -425,7 +330,7 @@
 								<span>Big</span>
 								Sale
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="product.html.twig">Shop Now </a>
 						</div>
 					</div>
 				</div>
@@ -439,7 +344,7 @@
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Best
 								<span>Headphone</span>
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="product.html.twig">Shop Now </a>
 						</div>
 					</div>
 				</div>
@@ -453,7 +358,7 @@
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">New
 								<span>Standard</span>
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="product.html.twig">Shop Now </a>
 						</div>
 					</div>
 				</div>
@@ -467,7 +372,7 @@
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Today
 								<span>Discount</span>
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="product.html.twig">Shop Now </a>
 						</div>
 					</div>
 				</div>
@@ -1221,19 +1126,19 @@
 						<h3 class="text-white font-weight-bold mb-3">Categories</h3>
 						<ul>
 							<li class="mb-3">
-								<a href="product.html">Mobiles </a>
+								<a href="product.html.twig">Mobiles </a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">Computers</a>
+								<a href="product.html.twig">Computers</a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">TV, Audio</a>
+								<a href="product.html.twig">TV, Audio</a>
 							</li>
 							<li class="mb-3">
 								<a href="product2.html">Smartphones</a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">Washing Machines</a>
+								<a href="product.html.twig">Washing Machines</a>
 							</li>
 							<li>
 								<a href="product2.html">Refrigerators</a>
@@ -1334,34 +1239,34 @@
 					<h5 class="font-weight-bold mb-2">Mobile & Tablets :</h5>
 					<ul>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Android Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Android Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Smartphones</a>
+							<a href="product.html.twig" class="border-right pr-2">Smartphones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Feature Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Feature Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Unboxed Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Unboxed Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Refurbished Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Refurbished Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2"> Tablets</a>
+							<a href="product.html.twig" class="border-right pr-2"> Tablets</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">CDMA Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">CDMA Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Value Added Services</a>
+							<a href="product.html.twig" class="border-right pr-2">Value Added Services</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Sell Old</a>
+							<a href="product.html.twig" class="border-right pr-2">Sell Old</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Used Mobiles</a>
+							<a href="product.html.twig" class="border-right pr-2">Used Mobiles</a>
 						</li>
 					</ul>
 				</div>
@@ -1369,28 +1274,28 @@
 					<h5 class="font-weight-bold mb-2">Computers :</h5>
 					<ul>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Laptops </a>
+							<a href="product.html.twig" class="border-right pr-2">Laptops </a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Printers</a>
+							<a href="product.html.twig" class="border-right pr-2">Printers</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Routers</a>
+							<a href="product.html.twig" class="border-right pr-2">Routers</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Ink & Toner Cartridges</a>
+							<a href="product.html.twig" class="border-right pr-2">Ink & Toner Cartridges</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Monitors</a>
+							<a href="product.html.twig" class="border-right pr-2">Monitors</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Video Games</a>
+							<a href="product.html.twig" class="border-right pr-2">Video Games</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Unboxed & Refurbished Laptops</a>
+							<a href="product.html.twig" class="border-right pr-2">Unboxed & Refurbished Laptops</a>
 						</li>
 						<li>
-							<a href="product.html" class="border-right pr-2">Assembled Desktops</a>
+							<a href="product.html.twig" class="border-right pr-2">Assembled Desktops</a>
 						</li>
 						<li class="m-sm-1">
 							<a href="product2.html" class="border-right pr-2">Data Cards</a>
@@ -1433,16 +1338,16 @@
 							<a href="product2.html" class="border-right pr-2">Headphones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Power Banks </a>
+							<a href="product.html.twig" class="border-right pr-2">Power Banks </a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Backpacks</a>
+							<a href="product.html.twig" class="border-right pr-2">Backpacks</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Mobile Cases & Covers</a>
+							<a href="product.html.twig" class="border-right pr-2">Mobile Cases & Covers</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Pen Drives</a>
+							<a href="product.html.twig" class="border-right pr-2">Pen Drives</a>
 						</li>
 						<li class="m-sm-1">
 							<a href="product2.html" class="border-right pr-2">External Hard Disks</a>
@@ -1494,7 +1399,7 @@
 					<h5 class="font-weight-bold mb-2">Popular on Electro Store</h5>
 					<ul>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Offers & Coupons</a>
+							<a href="product.html.twig" class="border-right pr-2">Offers & Coupons</a>
 						</li>
 						<li class="m-sm-1">
 							<a href="product2.html" class="border-right pr-2">Couple Watches</a>
@@ -1577,8 +1482,8 @@
 	<!-- copyright -->
 	<div class="copy-right py-3">
 		<div class="container">
-			<p class="text-center text-white">© 2018 Electro Store. All rights reserved | Design by
-				<a href="http://w3layouts.com"> W3layouts.</a>
+			<p class="text-center text-white">© 2020 Sfèri Store. All rights reserved | Design by
+				<a href="http://w3layouts.com"> OSF.</a>
 			</p>
 		</div>
 	</div>

@@ -26,15 +26,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //Meta tag Keywords -->
 
 	<!-- Custom-Files -->
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<!-- Bootstrap css -->
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<!-- Main css -->
-	<link rel="stylesheet" href="css/fontawesome-all.css">
+	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
 	<!-- Font-Awesome-Icons-CSS -->
-	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('assets/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<!-- pop-up-box -->
-	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('assets/css/menu.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -634,56 +634,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
 												<li>
-													<a href="product.html">All Mobile Phones</a>
+													<a href="product.html.twig">All Mobile Phones</a>
 												</li>
 												<li>
-													<a href="product.html">All Mobile Accessories</a>
+													<a href="product.html.twig">All Mobile Accessories</a>
 												</li>
 												<li>
-													<a href="product.html">Cases & Covers</a>
+													<a href="product.html.twig">Cases & Covers</a>
 												</li>
 												<li>
-													<a href="product.html">Screen Protectors</a>
+													<a href="product.html.twig">Screen Protectors</a>
 												</li>
 												<li>
-													<a href="product.html">Power Banks</a>
+													<a href="product.html.twig">Power Banks</a>
 												</li>
 												<li>
-													<a href="product.html">All Certified Refurbished</a>
+													<a href="product.html.twig">All Certified Refurbished</a>
 												</li>
 												<li>
-													<a href="product.html">Tablets</a>
+													<a href="product.html.twig">Tablets</a>
 												</li>
 												<li>
-													<a href="product.html">Wearable Devices</a>
+													<a href="product.html.twig">Wearable Devices</a>
 												</li>
 												<li>
-													<a href="product.html">Smart Home</a>
+													<a href="product.html.twig">Smart Home</a>
 												</li>
 											</ul>
 										</div>
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
 												<li>
-													<a href="product.html">Laptops</a>
+													<a href="product.html.twig">Laptops</a>
 												</li>
 												<li>
-													<a href="product.html">Drives & Storage</a>
+													<a href="product.html.twig">Drives & Storage</a>
 												</li>
 												<li>
-													<a href="product.html">Printers & Ink</a>
+													<a href="product.html.twig">Printers & Ink</a>
 												</li>
 												<li>
-													<a href="product.html">Networking Devices</a>
+													<a href="product.html.twig">Networking Devices</a>
 												</li>
 												<li>
-													<a href="product.html">Computer Accessories</a>
+													<a href="product.html.twig">Computer Accessories</a>
 												</li>
 												<li>
-													<a href="product.html">Game Zone</a>
+													<a href="product.html.twig">Game Zone</a>
 												</li>
 												<li>
-													<a href="product.html">Software</a>
+													<a href="product.html.twig">Software</a>
 												</li>
 											</ul>
 										</div>
@@ -769,14 +769,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<a class="nav-link" href="about.html">About Us</a>
 						</li>
 						<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-							<a class="nav-link" href="product.html">New Arrivals</a>
+							<a class="nav-link" href="product.html.twig">New Arrivals</a>
 						</li>
 						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Pages
 							</a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="product.html">Product 1</a>
+								<a class="dropdown-item" href="product.html.twig">Product 1</a>
 								<a class="dropdown-item" href="product2.html">Product 2</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="single.html">Single Product 1</a>
@@ -822,9 +822,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>M</span>obiles
-				<span>&</span>
-				<span>C</span>omputers</h3>
+				{{ selectedCategory.name }}</h3>
 			<!-- //tittle heading -->
 			<div class="row">
 				<!-- product left -->
@@ -833,487 +831,53 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<!-- first section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
 							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/m1.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
+								{% for productByCategory in productsByCategory %}
+									<div class="col-md-4 product-men mt-md-0 mt-5">
+										<div class="men-pro-item simpleCart_shelfItem">
+											<div class="men-thumb-item text-center">
+												<img src="{{ asset('images/products/' ~ productByCategory.image ) }}" alt="">
+												<div class="men-cart-pro">
+													<div class="inner-men-cart-pro">
+														<a href="single.html" class="link-product-add-cart">Quick View</a>
+													</div>
 												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Samsung Galaxy J7</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$200.00</span>
-												<del>$280.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Samsung Galaxy J7" />
-														<input type="hidden" name="amount" value="200.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
+												<span class="product-new-top">New</span>
 
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/m2.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
+											</div>
+											<div class="item-info-product text-center border-top mt-4">
+												<h4 class="pt-1">
+													<a href="single.html">OPPO A37f</a>
+												</h4>
+												<div class="info-product-price my-2">
+													<span class="item_price">$230.00</span>
+													<del>$250.00</del>
 												</div>
-											</div>
-											<span class="product-new-top">New</span>
-
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">OPPO A37f</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$230.00</span>
-												<del>$250.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="OPPO A37f" />
-														<input type="hidden" name="amount" value="230.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/m3.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
+												<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+													<form action="#" method="post">
+														<fieldset>
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" />
+															<input type="hidden" name="business" value=" " />
+															<input type="hidden" name="item_name" value="OPPO A37f" />
+															<input type="hidden" name="amount" value="230.00" />
+															<input type="hidden" name="discount_amount" value="1.00" />
+															<input type="hidden" name="currency_code" value="USD" />
+															<input type="hidden" name="return" value=" " />
+															<input type="hidden" name="cancel_return" value=" " />
+															<input type="submit" name="submit" value="Add to cart" class="button btn" />
+														</fieldset>
+													</form>
 												</div>
-											</div>
-											<span class="product-new-top">New</span>
 
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Apple iPhone X</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$280.00</span>
-												<del>$300.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Apple iPhone X" />
-														<input type="hidden" name="amount" value="280.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
 											</div>
 										</div>
 									</div>
-								</div>
+								{% endfor %}
+
 							</div>
 						</div>
 						<!-- //first section -->
-						<!-- second section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk1.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Infinix Hot S3</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$300.00</span>
-												<del>$320.00</del>
-											</div>
-											<span class="product-new-top">New</span>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Infinix Hot S3" />
-														<input type="hidden" name="amount" value="300.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
 
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk2.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Moto X4 (6 GB)</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$233.00</span>
-												<del>$240.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Moto X4 (6 GB)" />
-														<input type="hidden" name="amount" value="233.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk3.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">iVooMi i Series</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$249.00</span>
-												<del>$260.00</del>
-											</div>
-											<span class="product-new-top">New</span>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="iVooMi i Series" />
-														<input type="hidden" name="amount" value="249.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //second section -->
-						<!-- 3rd section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk4.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Dell Vostro Laptop</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$252.00</span>
-												<del>$260.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Dell Vostro Laptop" />
-														<input type="hidden" name="amount" value="252.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk5.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Acer Laptop</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$240.00</span>
-												<del>$260.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Acer Laptop" />
-														<input type="hidden" name="amount" value="240.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk6.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Lenovo </a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$300.00</span>
-												<del>$320.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Alcatel Tablet" />
-														<input type="hidden" name="amount" value="300.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //3rd section -->
-						<!-- fourth section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk7.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Intex Power Bank</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$100.00</span>
-												<del>$200.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Intex Power Bank" />
-														<input type="hidden" name="amount" value="100.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk8.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">HP Wireless Printer</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$243.00</span>
-												<del>$250.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="HP Wireless Printer" />
-														<input type="hidden" name="amount" value="243.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk9.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Alcatel Tablet</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$320.00</span>
-												<del>$350.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Alcatel Tablet" />
-														<input type="hidden" name="amount" value="320.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //fourth section -->
 					</div>
 				</div>
 				<!-- //product left -->
@@ -1630,19 +1194,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3 class="text-white font-weight-bold mb-3">Categories</h3>
 						<ul>
 							<li class="mb-3">
-								<a href="product.html">Mobiles </a>
+								<a href="product.html.twig">Mobiles </a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">Computers</a>
+								<a href="product.html.twig">Computers</a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">TV, Audio</a>
+								<a href="product.html.twig">TV, Audio</a>
 							</li>
 							<li class="mb-3">
 								<a href="product2.html">Smartphones</a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">Washing Machines</a>
+								<a href="product.html.twig">Washing Machines</a>
 							</li>
 							<li>
 								<a href="product2.html">Refrigerators</a>
@@ -1743,34 +1307,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h5 class="font-weight-bold mb-2">Mobile & Tablets :</h5>
 					<ul>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Android Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Android Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Smartphones</a>
+							<a href="product.html.twig" class="border-right pr-2">Smartphones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Feature Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Feature Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Unboxed Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Unboxed Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Refurbished Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">Refurbished Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2"> Tablets</a>
+							<a href="product.html.twig" class="border-right pr-2"> Tablets</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">CDMA Phones</a>
+							<a href="product.html.twig" class="border-right pr-2">CDMA Phones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Value Added Services</a>
+							<a href="product.html.twig" class="border-right pr-2">Value Added Services</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Sell Old</a>
+							<a href="product.html.twig" class="border-right pr-2">Sell Old</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Used Mobiles</a>
+							<a href="product.html.twig" class="border-right pr-2">Used Mobiles</a>
 						</li>
 					</ul>
 				</div>
@@ -1778,28 +1342,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h5 class="font-weight-bold mb-2">Computers :</h5>
 					<ul>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Laptops </a>
+							<a href="product.html.twig" class="border-right pr-2">Laptops </a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Printers</a>
+							<a href="product.html.twig" class="border-right pr-2">Printers</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Routers</a>
+							<a href="product.html.twig" class="border-right pr-2">Routers</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Ink & Toner Cartridges</a>
+							<a href="product.html.twig" class="border-right pr-2">Ink & Toner Cartridges</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Monitors</a>
+							<a href="product.html.twig" class="border-right pr-2">Monitors</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Video Games</a>
+							<a href="product.html.twig" class="border-right pr-2">Video Games</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Unboxed & Refurbished Laptops</a>
+							<a href="product.html.twig" class="border-right pr-2">Unboxed & Refurbished Laptops</a>
 						</li>
 						<li>
-							<a href="product.html" class="border-right pr-2">Assembled Desktops</a>
+							<a href="product.html.twig" class="border-right pr-2">Assembled Desktops</a>
 						</li>
 						<li class="m-sm-1">
 							<a href="product2.html" class="border-right pr-2">Data Cards</a>
@@ -1842,16 +1406,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<a href="product2.html" class="border-right pr-2">Headphones</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Power Banks </a>
+							<a href="product.html.twig" class="border-right pr-2">Power Banks </a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Backpacks</a>
+							<a href="product.html.twig" class="border-right pr-2">Backpacks</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Mobile Cases & Covers</a>
+							<a href="product.html.twig" class="border-right pr-2">Mobile Cases & Covers</a>
 						</li>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Pen Drives</a>
+							<a href="product.html.twig" class="border-right pr-2">Pen Drives</a>
 						</li>
 						<li class="m-sm-1">
 							<a href="product2.html" class="border-right pr-2">External Hard Disks</a>
@@ -1903,7 +1467,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h5 class="font-weight-bold mb-2">Popular on Electro Store</h5>
 					<ul>
 						<li class="m-sm-1">
-							<a href="product.html" class="border-right pr-2">Offers & Coupons</a>
+							<a href="product.html.twig" class="border-right pr-2">Offers & Coupons</a>
 						</li>
 						<li class="m-sm-1">
 							<a href="product2.html" class="border-right pr-2">Couple Watches</a>
@@ -1986,8 +1550,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- copyright -->
 	<div class="copy-right py-3">
 		<div class="container">
-			<p class="text-center text-white">© 2018 Electro Store. All rights reserved | Design by
-				<a href="http://w3layouts.com"> W3layouts.</a>
+			<p class="text-center text-white">© 2020 Sfèri Store. All rights reserved | Design by
+				<a href="http://w3layouts.com"> OSF.</a>
+			</p>
 			</p>
 		</div>
 	</div>
@@ -1995,7 +1560,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<!-- js-files -->
 	<!-- jquery -->
-	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="{{ asset('assets/js/jquery-2.2.3.min.js') }}"></script>
 	<!-- //jquery -->
 
 	<!-- nav smooth scroll -->
@@ -2016,7 +1581,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //nav smooth scroll -->
 
 	<!-- popup modal (for location)-->
-	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="{{ asset('assets/js/jquery.magnific-popup.js') }}"></script>
 	<script>
 		$(document).ready(function () {
 			$('.popup-with-zoom-anim').magnificPopup({
@@ -2036,7 +1601,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //popup modal (for location)-->
 
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="{{ asset('assets/js/minicart.js') }}"></script>
 	<script>
 		paypals.minicarts.render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
 
@@ -2079,7 +1644,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //password-script -->
 
 	<!-- smoothscroll -->
-	<script src="js/SmoothScroll.min.js"></script>
+	<script src="{{ asset('assets/js/SmoothScroll.min.js') }}"></script>
 	<!-- //smoothscroll -->
 
 	<!-- start-smooth-scrolling -->
@@ -2118,7 +1683,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //smooth-scrolling-of-move-up -->
 
 	<!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
+	<script src="{{ asset('assets/js/bootstrap.js') }}"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 
