@@ -10,7 +10,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
- *
+ * @Vich\Uploadable()
  */
 class Product
 {
@@ -54,9 +54,9 @@ class Product
 
     /**
      * @Vich\UploadableField(mapping="products_images", fileNameProperty="image")
-     * @var File
      */
     private $imageFile;
+
 
     /**
      * @ORM\Column(type="datetime")
@@ -67,6 +67,9 @@ class Product
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
+    public function __construct() {
+        $this->updatedAt = new \DateTime();
+    }
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
@@ -138,12 +141,12 @@ class Product
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage($image)
     {
         $this->image = $image;
 
