@@ -162,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604506980553</updated>
-      <workItem from="1604506981688" duration="45947000" />
+      <workItem from="1604506981688" duration="46266000" />
     </task>
     <servers />
   </component>
@@ -174,6 +174,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="554" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.60.1920.1040@0.0.1536.824" timestamp="1604589616791" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604704709204">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1920.60.1920.1040@0.0.1536.824" timestamp="1604704709204" />
     <state x="629" y="341" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1604507073332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
