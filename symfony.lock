@@ -78,8 +78,32 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "b131e6cbfe1b898a508987851963fff485986285"
+        }
+    },
     "egulias/email-validator": {
         "version": "2.1.23"
+    },
+    "friendsofsymfony/ckeditor-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "8eb1cd0962ded6a6d6e1e5a9b6d3e888f9f94ff6"
+        },
+        "files": [
+            "./config/packages/fos_ckeditor.yaml"
+        ]
+    },
+    "jms/metadata": {
+        "version": "2.3.0"
     },
     "laminas/laminas-code": {
         "version": "3.4.1"
@@ -343,6 +367,9 @@
             "./tests/bootstrap.php"
         ]
     },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.20.0"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.20.0"
     },
@@ -362,6 +389,9 @@
         "version": "v1.20.0"
     },
     "symfony/polyfill-php80": {
+        "version": "v1.20.0"
+    },
+    "symfony/polyfill-uuid": {
         "version": "v1.20.0"
     },
     "symfony/process": {
@@ -426,6 +456,9 @@
     "symfony/stopwatch": {
         "version": "v4.4.16"
     },
+    "symfony/string": {
+        "version": "v5.1.8"
+    },
     "symfony/test-pack": {
         "version": "v1.0.7"
     },
@@ -464,6 +497,9 @@
     },
     "symfony/twig-pack": {
         "version": "v1.0.2"
+    },
+    "symfony/uid": {
+        "version": "v5.1.8"
     },
     "symfony/validator": {
         "version": "4.3",
@@ -512,6 +548,18 @@
     },
     "twig/twig": {
         "version": "v3.1.1"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "c4f5755b37fb65b9c6a3cbdae91205c15a137ed4"
+        },
+        "files": [
+            "./config/packages/vich_uploader.yaml"
+        ]
     },
     "webimpress/safe-writer": {
         "version": "2.1.0"
