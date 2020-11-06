@@ -34,8 +34,8 @@ class ProductCrudController extends AbstractCrudController
             IntegerField::new('unitPrice'),
             IntegerField::new('quantityInStock'),
             AssociationField::new('category'),
-            DateTimeField::new('createdAt')->hideOnForm(),
-            DateTimeField::new('updatedAt')->hideOnForm(),
+            DateTimeField::new('createdAt')->setFormat('dd/MM/yyyy H:mm')->hideOnForm(),
+            DateTimeField::new('updatedAt')->setFormat('dd/MM/yyyy H:mm')->hideOnForm(),
         ];
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
             $fields[] = $image;
