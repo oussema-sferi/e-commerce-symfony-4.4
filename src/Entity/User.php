@@ -135,4 +135,6 @@ class User implements UserInterface
     {
         return $this->isVerified;
     }
+
+
 }
