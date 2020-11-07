@@ -76,6 +76,11 @@ class Product
      */
     private $category;
 
+    /**
+     * @ORM\OneToOne(targetEntity=RowOrder::class, mappedBy="product", cascade={"persist", "remove"})
+     */
+    private $rowOrder;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -200,6 +205,24 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getRowOrder(): ?RowOrder
+    {
+        return $this->rowOrder;
+    }
+
+    public function setRowOrder(?RowOrder $rowOrder): self
+    {
+        $this->rowOrder = $rowOrder;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newProduct = null === $rowOrder ? null : $this;
+        if ($rowOrder->getProduct() !== $newProduct) {
+            $rowOrder->setProduct($newProduct);
+        }
 
         return $this;
     }

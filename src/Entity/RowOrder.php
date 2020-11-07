@@ -17,8 +17,59 @@ class RowOrder
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $rowQuantity;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $rowTotalPrice;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Product::class, inversedBy="rowOrder", cascade={"persist", "remove"})
+     */
+    private $product;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getRowQuantity(): ?int
+    {
+        return $this->rowQuantity;
+    }
+
+    public function setRowQuantity(int $rowQuantity): self
+    {
+        $this->rowQuantity = $rowQuantity;
+
+        return $this;
+    }
+
+    public function getRowTotalPrice(): ?float
+    {
+        return $this->rowTotalPrice;
+    }
+
+    public function setRowTotalPrice(float $rowTotalPrice): self
+    {
+        $this->rowTotalPrice = $rowTotalPrice;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
+
+        return $this;
     }
 }
