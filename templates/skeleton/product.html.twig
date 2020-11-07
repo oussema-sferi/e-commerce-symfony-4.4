@@ -810,7 +810,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a href="index.html.twig">Home</a>
 						<i>|</i>
 					</li>
-					<li>Electronics</li>
+					<li>Categories</li>
 				</ul>
 			</div>
 		</div>
@@ -841,16 +841,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 														<a href="single.html.twig" class="link-product-add-cart">Quick View</a>
 													</div>
 												</div>
-												<span class="product-new-top">New</span>
-
 											</div>
 											<div class="item-info-product text-center border-top mt-4">
 												<h4 class="pt-1">
-													<a href="single.html.twig">OPPO A37f</a>
+													<a href="single.html.twig">{{ productByCategory.name }}</a>
 												</h4>
 												<div class="info-product-price my-2">
-													<span class="item_price">$230.00</span>
-													<del>$250.00</del>
+													<span class="item_price">${{ productByCategory.unitPrice }}</span>
 												</div>
 												<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 													<form action="#" method="post">
