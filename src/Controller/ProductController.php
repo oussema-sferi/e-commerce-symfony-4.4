@@ -33,4 +33,16 @@ class ProductController extends AbstractController
             'productsByCategory' => $productsByCat
         ]);
     }
+
+    /**
+     * @Route("/singleproduct/{id}", name="singleproduct")
+     */
+    public function singleProduct($id): Response
+    {
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        return $this->render('skeleton/single.html.twig', [
+            'controller_name' => 'ProductController',
+            'singleproduct' => $product,
+        ]);
+    }
 }
