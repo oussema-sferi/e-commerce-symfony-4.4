@@ -28,13 +28,13 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('My E Commerce');
+            ->setTitle('My Sfèri Store');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToCrud('Users', 'fa fa-file-pdf', User::class);
-        yield MenuItem::linkToCrud('Products', 'fa fa-file-pdf', Product::class);
-        yield MenuItem::linkToCrud('Categories', 'fa fa-file-pdf', Category::class);
+        yield MenuItem::linkToCrud('Users', 'fas fa-user-friends', User::class);
+        yield MenuItem::linkToCrud('Products', 'fab fa-product-hunt', Product::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-sitemap', Category::class);
     }
 }
