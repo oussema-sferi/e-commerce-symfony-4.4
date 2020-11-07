@@ -13,7 +13,7 @@
             You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
-
+<!--
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
@@ -38,5 +38,35 @@
     <button class="btn btn-lg btn-primary" type="submit">
         Sign in
     </button>
+    -->
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="inputEmail" class="label">Email</label>
+                        <input id="inputEmail" type="email" name="email" value="{{ last_username }}" class="input" required autofocus>
+                    </div>
+
+                    <div class="group">
+                        <label for="inputPassword" class="label">Password</label>
+                        <input id="inputPassword" name="password" type="password" class="input" required>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    <div class="group">
+                        <button type="submit" class="button">Sign In</button>
+                    </div>
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
 {% endblock %}
+
