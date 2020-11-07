@@ -25,12 +25,14 @@ class ProductController extends AbstractController
      */
     public function productsByCategory($id): Response
     {
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         $category = $this->getDoctrine()->getRepository(Category::class)->find($id);
         $productsByCat = $category->getProducts();
         return $this->render('skeleton/product.html.twig', [
             'controller_name' => 'ProductController',
             'selectedCategory' => $category,
-            'productsByCategory' => $productsByCat
+            'productsByCategory' => $productsByCat,
+            'categories' => $categories
         ]);
     }
 
@@ -39,10 +41,12 @@ class ProductController extends AbstractController
      */
     public function singleProduct($id): Response
     {
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
         return $this->render('skeleton/single.html.twig', [
             'controller_name' => 'ProductController',
             'singleproduct' => $product,
+            'categories' => $categories
         ]);
     }
 }
