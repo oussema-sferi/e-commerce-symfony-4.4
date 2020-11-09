@@ -170,7 +170,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604506980553</updated>
-      <workItem from="1604506981688" duration="59447000" />
+      <workItem from="1604506981688" duration="65007000" />
     </task>
     <servers />
   </component>
@@ -240,7 +240,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/templates/skeleton/product.html.twig</url>
-          <line>345</line>
+          <line>344</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

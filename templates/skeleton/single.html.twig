@@ -372,7 +372,6 @@
 					<h3 class="mb-3">{{ singleproduct.description }}</h3>
 					<p class="mb-3">
 						<span class="item_price">${{ singleproduct.unitPrice }}</span>
-
 					</p>
 					<div class="single-infoagile">
 						<ul>
@@ -398,7 +397,7 @@
 					</div>
 					<div class="occasion-cart">
 						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-							<form action="#" method="post">
+							<form action="{{path('addtocart', {'id': singleproduct.id}) }}" method="post">
 								<fieldset>
 									<input type="hidden" name="cmd" value="_cart" />
 									<input type="hidden" name="add" value="1" />

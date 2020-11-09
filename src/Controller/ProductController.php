@@ -49,4 +49,18 @@ class ProductController extends AbstractController
             'categories' => $categories
         ]);
     }
+
+    /**
+     * @Route("/addtocart/{id}", name="addtocart")
+     */
+    public function addToCart($id): Response
+    {
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        return $this->render('skeleton/checkout.html.twig', [
+            'controller_name' => 'ProductController',
+            'singleproduct' => $product,
+            'categories' => $categories
+        ]);
+    }
 }
