@@ -83,6 +83,7 @@ class ProductController extends AbstractController
                 $manager = $this->getDoctrine()->getManager();
                 if($checkExProd) {
                     $checkExProd[0]->setRowQuantity($checkExProd[0]->getRowQuantity() + 1);
+                    $checkExProd[0]->setRowTotalPrice($addedProduct->getUnitPrice() * $checkExProd[0]->getRowQuantity());
                 } else {
                     $manager->persist($rowOrder);
                 }

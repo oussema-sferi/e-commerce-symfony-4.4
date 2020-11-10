@@ -375,10 +375,10 @@
 							<tr class="rem1">
 								<td class="invert-image">
 									<a href="single.html.twig">
-										<img src="images/a.jpg" alt=" " class="img-responsive">
+										<img src="{{ asset('images/products/' ~ roworder.product.image ) }}" alt=" " class="img-responsive">
 									</a>
 								</td>
-								<td class="invert">Back Cover</td>
+								<td class="invert">{{ roworder.product.name }}</td>
 								<td class="invert">1</td>
 								<td class="invert">
 									<div class="quantity">
