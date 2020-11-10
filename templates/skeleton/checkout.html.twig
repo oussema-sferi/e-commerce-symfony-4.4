@@ -379,7 +379,7 @@
 									</a>
 								</td>
 								<td class="invert">{{ roworder.product.name }}</td>
-								<td class="invert">1</td>
+								<td class="invert">${{ roworder.product.unitPrice}}</td>
 								<td class="invert">
 									<div class="quantity">
 										<div class="quantity-select">
@@ -394,12 +394,12 @@
 								<td class="invert">${{ roworder.rowTotalPrice}}</td>
 								<td class="invert">
 									<div class="rem">
-										<div class="close1"> </div>
+										<div><button style="border-radius: 3px">Update</button></div>
 									</div>
 								</td>
 								<td class="invert">
 									<div class="rem">
-										<div class="close1"> </div>
+										<div><a href="{{ path('removerow', {'id': roworder.id}) }}"><button style="border-radius: 3px">Remove</button></a></div>
 									</div>
 								</td>
 							</tr>
@@ -786,6 +786,7 @@
 		});
 	});
 </script>
+<!--
 <script>
 	$(document).ready(function (c) {
 		$('.close2').on('click', function (c) {
@@ -804,6 +805,7 @@
 		});
 	});
 </script>
+-->
 <!-- //quantity -->
 <!-- smoothscroll -->
 <script src="{{ asset('assets/js/SmoothScroll.min.js') }}"></script>

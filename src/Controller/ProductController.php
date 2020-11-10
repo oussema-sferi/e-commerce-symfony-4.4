@@ -106,4 +106,16 @@ class ProductController extends AbstractController
             'categories' => $categories
         ]);
     }
+
+    /**
+     * @Route("/removerow/{id}", name="removerow")
+     */
+    public function removeRowOrder(UserInterface $user, $id): Response
+    {
+        $manager = $this->getDoctrine()->getManager();
+        $rowToRemove = $this->getDoctrine()->getRepository(RowOrder::class)->find($id);
+        $manager->remove($rowToRemove);
+        $manager->flush();
+        return $this->redirectToRoute('cart');
+    }
 }
