@@ -82,9 +82,25 @@ class ProductController extends AbstractController
                 $manager->persist($rowOrder);
                 $manager->flush();
         }
+
         return $this->render('skeleton/checkout.html.twig', [
             'controller_name' => 'ProductController',
             'addedproduct' => $addedProduct,
+            'categories' => $categories,
+
+        ]);
+    }
+
+    /**
+     * @Route("/cart", name="cart")
+     */
+    public function showCart(UserInterface $user): Response
+    {
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        $rowOrders = $user->getShoppingCart()->getRowOrders();
+        return $this->render('skeleton/checkout.html.twig', [
+            'controller_name' => 'ProductController',
+            'roworders'=> $rowOrders,
             'categories' => $categories
         ]);
     }
