@@ -353,10 +353,20 @@
 				<span>C</span>heckout
 			</h3>
 			<!-- //tittle heading -->
+			{% if roworders | length == 0 %}
+			<h4 class="mb-sm-4 mb-3">Your shopping cart is empty</h4>
+			{% else %}
 			<div class="checkout-right">
-				<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
-					<span>{{ roworders | length  }} Products</span>
-				</h4>
+				{% if  roworders | length == 1 %}
+					<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
+						<span>{{ roworders | length  }} Product</span>
+					</h4>
+				{% else %}
+					<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
+						<span>{{ roworders | length  }} Products</span>
+					</h4>
+				{% endif %}
+
 				<div class="table-responsive">
 					<table class="timetable_sub">
 						<thead>
@@ -455,6 +465,7 @@
 					</div>
 				</div>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 	<!-- //checkout page -->
