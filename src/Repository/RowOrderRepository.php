@@ -47,4 +47,13 @@ class RowOrderRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getRowOrderWhereProduct($id)
+    {
+        return $this->createQueryBuilder('r')
+            ->join('r.product', 'p')
+            ->where("p.id = $id")
+            ->getQuery()
+            ->getResult();
+    }
 }

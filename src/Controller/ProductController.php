@@ -60,6 +60,7 @@ class ProductController extends AbstractController
     {
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         $addedProduct = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $checkExProd = $this->getDoctrine()->getRepository(RowOrder::class)->getRowOrderWhereProduct($id);
         $rowOrder = new RowOrder();
         $rowOrder->setRowQuantity(1);
         $rowOrder->setProduct($addedProduct);
@@ -68,6 +69,7 @@ class ProductController extends AbstractController
         $authId = $user->getId();
         $existingCart = $this->getDoctrine()->getRepository(ShoppingCart::class)->getCartWhereUser($authId);
         if(!$existingCart) {
+
             $cart = new ShoppingCart();
             $cart->setCustomer($user);
             $rowOrder->setShoppingCart($cart);
@@ -79,16 +81,15 @@ class ProductController extends AbstractController
                 $ex = $user->getShoppingCart();
                 $rowOrder->setShoppingCart($ex);
                 $manager = $this->getDoctrine()->getManager();
-                $manager->persist($rowOrder);
-                $manager->flush();
+                if($checkExProd) {
+                    $checkExProd[0]->setRowQuantity($checkExProd[0]->getRowQuantity() + 1);
+                } else {
+                    $manager->persist($rowOrder);
+                }
+            $manager->flush();
         }
 
-        return $this->render('skeleton/checkout.html.twig', [
-            'controller_name' => 'ProductController',
-            'addedproduct' => $addedProduct,
-            'categories' => $categories,
-
-        ]);
+        return $this->redirectToRoute('cart');
     }
 
     /**

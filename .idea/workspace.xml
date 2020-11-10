@@ -170,7 +170,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604506980553</updated>
-      <workItem from="1604506981688" duration="83239000" />
+      <workItem from="1604506981688" duration="86332000" />
     </task>
     <servers />
   </component>
@@ -262,6 +262,11 @@
           <url>file://$PROJECT_DIR$/templates/skeleton/checkout.html.twig</url>
           <line>375</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/skeleton/checkout.html.twig</url>
+          <line>382</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
