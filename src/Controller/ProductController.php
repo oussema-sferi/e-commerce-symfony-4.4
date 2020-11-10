@@ -125,7 +125,6 @@ class ProductController extends AbstractController
     public function updateRowOrder($id, $quantity): Response
     {
         $manager = $this->getDoctrine()->getManager();
-        $prodToUpdate = $this->getDoctrine()->getRepository(Product::class)->find($id);
         $rowToUpdate = $this->getDoctrine()->getRepository(RowOrder::class)->find($id);
         $rowToUpdate->setRowQuantity($quantity);
         $rowToUpdate->setRowTotalPrice($rowToUpdate->getProduct()->getUnitPrice() * $rowToUpdate->getRowQuantity());

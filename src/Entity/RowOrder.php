@@ -28,7 +28,7 @@ class RowOrder
     private $rowTotalPrice;
 
     /**
-     * @ORM\OneToOne(targetEntity=Product::class, inversedBy="rowOrder", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Product::class, inversedBy="rowOrder", cascade={"persist"})
      */
     private $product;
 
