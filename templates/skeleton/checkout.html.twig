@@ -384,8 +384,8 @@
 									<div class="quantity">
 										<div class="quantity-select">
 											<div class="entry value-minus">&nbsp;</div>
-											<div class="entry value">
-												<span>{{ roworder.rowQuantity}}</span>
+											<div class="entry value" id="increment-{{ roworder.id }}">
+												{{ roworder.rowQuantity}}
 											</div>
 											<div class="entry value-plus active">&nbsp;</div>
 										</div>
@@ -394,7 +394,8 @@
 								<td class="invert">${{ roworder.rowTotalPrice}}</td>
 								<td class="invert">
 									<div class="rem">
-										<div><button style="border-radius: 3px">Update</button></div>
+										<div><a href="javascript:void(0)" onclick="updateRowQuantity({{ roworder.id }})"><button style="border-radius: 3px">Update</button></a></div>
+
 									</div>
 								</td>
 								<td class="invert">
@@ -678,7 +679,16 @@
 	});
 </script>
 <!-- //nav smooth scroll -->
+<script>
+	function updateRowQuantity(id) {
 
+		let quantity = Number.parseInt($("#increment-"+id).text());
+		let url = "{{ path('updaterow',{'id':'xx','quantity':'yy'}) }}"
+		url = url.replace('xx',id);
+		url = url.replace('yy',quantity);
+		window.location.href=url;
+	}
+</script>
 <!-- popup modal (for location)-->
 <script src="{{ asset('assets/js/jquery.magnific-popup.js') }}"></script>
 <script>
@@ -767,7 +777,7 @@
 	$('.value-plus').on('click', function () {
 		var divUpd = $(this).parent().find('.value'),
 				newVal = parseInt(divUpd.text(), 10) + 1;
-		divUpd.text(newVal);
+		divUpd.html(newVal);
 	});
 
 	$('.value-minus').on('click', function () {

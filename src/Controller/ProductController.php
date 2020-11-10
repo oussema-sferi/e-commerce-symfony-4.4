@@ -110,11 +110,25 @@ class ProductController extends AbstractController
     /**
      * @Route("/removerow/{id}", name="removerow")
      */
-    public function removeRowOrder(UserInterface $user, $id): Response
+    public function removeRowOrder($id): Response
     {
         $manager = $this->getDoctrine()->getManager();
         $rowToRemove = $this->getDoctrine()->getRepository(RowOrder::class)->find($id);
         $manager->remove($rowToRemove);
+        $manager->flush();
+        return $this->redirectToRoute('cart');
+    }
+
+    /**
+     * @Route("/updaterow/{id}/{quantity}", name="updaterow")
+     */
+    public function updateRowOrder($id, $quantity): Response
+    {
+        $manager = $this->getDoctrine()->getManager();
+        $prodToUpdate = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $rowToUpdate = $this->getDoctrine()->getRepository(RowOrder::class)->find($id);
+        $rowToUpdate->setRowQuantity($quantity);
+        $rowToUpdate->setRowTotalPrice($rowToUpdate->getProduct()->getUnitPrice() * $rowToUpdate->getRowQuantity());
         $manager->flush();
         return $this->redirectToRoute('cart');
     }
