@@ -2,11 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\RowOrder;
+use App\Entity\ShoppingCart;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Product;
 use App\Entity\Category;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class ProductController extends AbstractController
 {
@@ -53,13 +56,35 @@ class ProductController extends AbstractController
     /**
      * @Route("/addtocart/{id}", name="addtocart")
      */
-    public function addToCart($id): Response
+    public function addToCart(UserInterface $user, $id): Response
     {
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $addedProduct = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $rowOrder = new RowOrder();
+        $rowOrder->setRowQuantity(1);
+        $rowOrder->setProduct($addedProduct);
+        $rowOrder->setRowTotalPrice($addedProduct->getUnitPrice() * $rowOrder->getRowQuantity());
+
+        $authId = $user->getId();
+        $existingCart = $this->getDoctrine()->getRepository(ShoppingCart::class)->getCartWhereUser($authId);
+        if(!$existingCart) {
+            $cart = new ShoppingCart();
+            $cart->setCustomer($user);
+            $rowOrder->setShoppingCart($cart);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($cart);
+            $manager->persist($rowOrder);
+            $manager->flush();
+        } else {
+                $ex = $user->getShoppingCart();
+                $rowOrder->setShoppingCart($ex);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($rowOrder);
+                $manager->flush();
+        }
         return $this->render('skeleton/checkout.html.twig', [
             'controller_name' => 'ProductController',
-            'singleproduct' => $product,
+            'addedproduct' => $addedProduct,
             'categories' => $categories
         ]);
     }

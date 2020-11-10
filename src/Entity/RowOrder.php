@@ -32,6 +32,12 @@ class RowOrder
      */
     private $product;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=ShoppingCart::class, inversedBy="rowOrders")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $shoppingCart;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +75,18 @@ class RowOrder
     public function setProduct(?Product $product): self
     {
         $this->product = $product;
+
+        return $this;
+    }
+
+    public function getShoppingCart(): ?ShoppingCart
+    {
+        return $this->shoppingCart;
+    }
+
+    public function setShoppingCart(?ShoppingCart $shoppingCart): self
+    {
+        $this->shoppingCart = $shoppingCart;
 
         return $this;
     }

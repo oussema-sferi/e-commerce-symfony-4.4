@@ -41,6 +41,13 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\OneToOne(targetEntity=ShoppingCart::class, mappedBy="customer", cascade={"persist", "remove"})
+     */
+    private $shoppingCart;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,6 +141,23 @@ class User implements UserInterface
     public function getIsVerified(): ?bool
     {
         return $this->isVerified;
+    }
+
+    public function getShoppingCart(): ?ShoppingCart
+    {
+        return $this->shoppingCart;
+    }
+
+    public function setShoppingCart(ShoppingCart $shoppingCart): self
+    {
+        $this->shoppingCart = $shoppingCart;
+
+        // set the owning side of the relation if necessary
+        if ($shoppingCart->getCustomer() !== $this) {
+            $shoppingCart->setCustomer($this);
+        }
+
+        return $this;
     }
 
 
